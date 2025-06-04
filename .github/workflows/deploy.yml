@@ -28,12 +28,12 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ${{ vars.ALI_REGISTRY }}/longan_iot/${{ github.event.repository.name }}:${{ github.ref_name }} \
+            -t ${{ vars.ALI_REGISTRY }}/longan_iot/snap-spline:${{ github.ref_name }} \
             -f ./Dockerfile .
 
       - name: Push Docker image
         run: |
-          docker push ${{ vars.ALI_REGISTRY }}/longan_iot/${{ github.event.repository.name }}:${{ github.ref_name }}
+          docker push ${{ vars.ALI_REGISTRY }}/longan_iot/snap-spline:${{ github.ref_name }}
   
   deploy-dev:
     runs-on: ubuntu-latest
